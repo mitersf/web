@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions League</title>
+    <!-- Agregar enlaces a Bootstrap CSS y jQuery (requerido para Bootstrap) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Agregar enlace al archivo JavaScript de Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* Blanco */
+            background-image: url('https://images8.alphacoders.com/118/thumb-1920-1182758.jpg');
+            background-size: cover; /* Ajusta la imagen para cubrir todo el cuerpo */
+            background-repeat: no-repeat; /* Evita la repetición de la imagen */
+            background-attachment: fixed; /* Fija la imagen de fondo */
+            background-color: #FFFFFF; /* Color de fondo de respaldo si la imagen no se carga */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #CE132D; /* Rojo */
+            color: #FFFFFF; /* Blanco */
+            text-align: center;
+            padding: 1em;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2em;
+            background-color: #FFFFFF; /* Blanco */
+        }
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #CE132D; /* Rojo */
+            color: #FFFFFF; /* Blanco */
+        }
+        /* Estilos personalizados para el menú */
+        .dropdown-menu {
+            background-color: #fdf8f8; /* Color de fondo del menú desplegable */
+        }
+        /* Estilos personalizados para la imagen */
+        .champions-image {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Estilos para el footer */
+        .sticky-footer {
+            flex-shrink: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-danger text-white text-center py-4">
+        <h1>Fútbol con Mateo</h1>
+        <p>Ve los partidos más importantes de la Champions y nuestras predicciones</p>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Menú
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="showSection('equipos')">Equipos</a>
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="showSection('grupo-de-la-muerte')">El grupo de la muerte</a>
+                    <a class="dropdown-item" href="javascript:void(0)" onclick="showSection('historia')">Historia</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <div id="equipos" style="display: none;">
+            <h2>Equipos que apuntan a la cima</h2>
+            <ul>
+                <li><strong>Real Madrid</strong>, España</li>
+                <li><strong>Manchester City</strong>, Inglaterra</li>
+                <li><strong>Bayern de Múnich</strong>, Alemania</li>
+                <li><strong>Milan</strong>, Italia</li>
+                <li><strong>Napoli</strong>, Italia</li>
+                <li><strong>Barcelona Fútbol Club</strong>, España</li>
+            </ul>
+        </div>
+        <div id="grupo-de-la-muerte" style="display: none;">
+            <h2>El grupo de la muerte</h2>
+            <p>El grupo de la muerte es conocido por tener 4 equipos que resaltan en sus ligas. Este año han sido:</p>
+            <ol>
+                <li><strong>Paris Saint-Germain</strong></li>
+                <li><strong>Borussia Dortmund</strong></li>
+                <li><strong>Milán</strong></li>
+                <li><strong>Newcastle</strong></li>
+            </ol>
+        </div>
+        <div id="historia" style="display: none;">
+            <h2>Historia</h2>
+            <p>La Champions League es el torneo de clubes de fútbol más prestigioso del mundo, fundado en 1955. Durante sus años de historia, ha visto a equipos legendarios...</p>
+            <img src="https://www.elpais.com.co/resizer/f5nRizLS9FOOQfJZrYiK3TLhMgs=/1280x720/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/BJ4TZLIBSBFCNAAMSDEY752SFM.JPG" alt="Imagen de la Champions League" class="champions-image">
+        </div>
+    </div>
+    <footer class="bg-danger text-white text-center py-2 sticky-footer">
+        <p>&copy; Champions edición 23-24 Here We Go!</p>
+        <a href="/privacy-policy" class="text-white">Política de Privacidad</a>
+        <a href="/contact" class="text-white">Contacto</a>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Oculta todas las secciones
+            document.getElementById('equipos').style.display = 'none';
+            document.getElementById('grupo-de-la-muerte').style.display = 'none';
+            document.getElementById('historia').style.display = 'none';
+
+            // Muestra la sección seleccionada
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
